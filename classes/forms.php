@@ -88,7 +88,7 @@ class Forms
 	 */
 	public function Text($args)
 	{
-		$args = wp_parse_args( $args, $this->formdefaults );
+		$args = $this->parse_args( $args, $this->formdefaults );
 		
 		$html='';
 		if(!$args["name"]) { $args["name"] = $args["id"]; }		# als name niet gedefinieerd is name = id
@@ -150,7 +150,7 @@ class Forms
 	 */
 	public function TextArea($args)
 	{
-		$args = wp_parse_args( $args, $this->formdefaults );
+		$args = $this->parse_args( $args, $this->formdefaults );
 		if(!$args["name"]) { $args["name"] = $args["id"]; }		# als name niet gedefinieerd is name = id
 		$html='';
 		if($args['required']) { $args["label"] .= "*"; }
@@ -193,7 +193,7 @@ class Forms
 	public function Radio($args)
 	{
 		$html='';
-		$args = wp_parse_args( $args, $this->formdefaults );
+		$args = $this->parse_args( $args, $this->formdefaults );
 		if($args['required']) { $args["label"] .= "*"; }
 		$id=$args["id"];
 		$html='';
@@ -237,7 +237,7 @@ class Forms
 	 */
 	public function CheckBox($args)
 	{
-		$args = wp_parse_args( $args, $this->formdefaults );
+		$args = $this->parse_args( $args, $this->formdefaults );
 		
 		$html='';
 		$args['name'] = $args['name'] ? $args['name'] : $args['id']; # name is id if not defined
@@ -312,7 +312,7 @@ class Forms
 	 */
 	public function Date($args)
 	{
-		$args = wp_parse_args( $args, $this->formdefaults );
+		$args = $this->parse_args( $args, $this->formdefaults );
 		if($args['required']) { $args["label"] .= "*"; } 
 		$checkclass = isset($args["check"]) ? ' ' . $args["check"] : ''; # add check class if given so that javascript can test the content
 		
@@ -359,7 +359,7 @@ class Forms
 	 */
 	public function Dropdown($args)
 	{
-		$args = wp_parse_args( $args, $this->formdefaults );
+		$args = $this->parse_args( $args, $this->formdefaults );
 		if(!$args["name"]) { $args["name"] = $args["id"]; }		# als name niet gedefinieerd is name = id
 		if($args['required']) { $args["label"] .= '*'; } 
 		$html='';
@@ -414,7 +414,7 @@ class Forms
 	 */
 	public function File($args)
 	{
-		$args = wp_parse_args( $args, $this->formdefaults );
+		$args = $this->parse_args( $args, $this->formdefaults );
 		if(!$args["name"]) { $args["name"] = $args["id"]; }		# als name niet gedefinieerd is name = id
 		if($args['required']) { $args["label"] .= '*'; } 
 		$html='';
@@ -599,6 +599,15 @@ class Forms
 		imagecopyresampled($dst, $src, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
 		imagejpeg( $dst, $file );
 		return;
+	}
+	function parse_args($nargs,$default)
+	{
+		$args=$default;
+		foreach ($nargs as $arg=>$value)
+		{
+			$args[$arg] = $value;
+		}
+		return($args);
 	}
 }
 
