@@ -1,0 +1,64 @@
+.compacttable  .compactth .compacttd .compacttr
+{
+    border:solid 4px #006CFF;
+    margin:0px;
+    padding:0px;
+    border-spacing:0px;
+    border-collapse:collapse;
+    line-height:22px;
+    font-size:18px;
+    font-family:Arial, Verdana, Tahoma, Helvetica, sans-serif;
+    font-weight:400;
+    text-decoration:none;
+    color:#010107e5; 
+    white-space:pre-wrap;
+}
+
+.compacttr 
+{
+	margin:0;
+    background: #D8B5B6;
+    padding:2px;
+}
+.compactth, .compactthright, .compactthleft
+{
+    padding: 10px;
+    background-color:#98dcff;
+    border:solid 2px #006CFF;
+}
+.compactthright {
+    text-align: right;
+}
+.compacttd, .compacttdright, .compacttdleft
+{
+	padding: 5px;
+    border:solid 1px #006CFF;
+}
+.compacttdright {
+    text-align: right;
+}
+
+.compacttdeven, .compacttdevenright {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+	height: 5px;
+    vertical-align: baseline;
+    background: #D8B5B6;
+}
+.compacttdevenright {
+    text-align: right;
+}
+.compacttdodd, .compacttdoddright {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+	height: 5px;
+    vertical-align: baseline;
+    background: #CD5C5C;
+}
+.compacttdoddright {
+    text-align: right;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="plugin" group="system">
+	<name>plg_system_verhuiskalender</name>
+	<author>Theo van der Greft</author>
+	<creationDate>24-11-2021</creationDate>
+	<copyright>Copyright (C) 2021. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>tvdgreft@pranamas.nl</authorEmail>
+	<authorUrl>www.pranamas.nl</authorUrl>
+	<version>1.0.0</version>
+	<description>Create , modify, display verhuiskalender</description>
+
+	<files>
+		<filename plugin="verhuiskalender">verhuiskalender.php</filename>
+		<filename>index.html</filename>
+		<filename>bootstrap.php</filename>
+		<folder>classes</folder>
+	</files>
+	<languages>
+		<language tag="nl-NL">nl-NL.plg_system_verhuiskalender.ini</language>
+		<language tag="nl-NL">nl-NL.plg_system_verhuiskalender.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			<field
+				name="organisation"
+				type="text"
+				label="PLG_SYSTEM_verhuiskalender_PARAM_ORGANISATION_LABEL"
+				description="PLG_SYSTEM_verhuiskalender_PARAM_ORGANISATION_DESC"
+			/>	
+			
+			</fieldset>
+		</fields>
+	</config>
+</extension>
